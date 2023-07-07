@@ -1,0 +1,145 @@
+function oddIndices(arr) {
+    // Return an array containing all the odd indices in the array
+    // Your code here
+}
+function oddIndices(arr) {
+  let result = [];
+  for (let i = 1; i < arr.length; i += 2) {
+    result.push(arr[i]);
+  }
+  return result;
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let result = oddIndices(arr);
+console.log(result); // Output: [2, 4, 6, 8]
+
+function oddReverse(arr) {
+    // Return an array containing all the odd indices starting from the end
+    // Your code here
+}
+function oddReverse(arr) {
+  let result = [];
+  for (let i = arr.length - 1; i >= 0; i -= 2) {
+    result.push(arr[i]);
+  }
+  return result;
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let result = oddReverse(arr);
+console.log(result); // Output: [9, 7, 5, 3, 1]
+
+function secondPower(arr) {
+    // Return an array containing all indices that are powers of 2
+    // Your code here
+}
+
+function nthPower(arr, n) {
+    // Return an array containing all indices that are powers of n
+    // Your code here
+}
+function nthPower(arr, n) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i === Math.pow(n, Math.floor(Math.log(i) / Math.log(n)))) {
+      result.push(i);
+    }
+  }
+  return result;
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let n = 2;
+let result = nthPower(arr, n);
+console.log(result); // Output: [0, 1, 4, 8]
+
+function firstHalf(arr) {
+    // Return an array containing the first half of an array
+    // Include middle index on odd length arr
+    // Your code here
+}
+function secondHalf(arr) {
+  const length = arr.length;
+  const middleIndex = Math.floor(length / 2);
+
+  if (length % 2 === 0) {
+    return arr.slice(middleIndex);
+  } else {
+    return arr.slice(middleIndex);
+  }
+}
+let arr1 = [1, 2, 3, 4, 5];
+console.log(secondHalf(arr1)); // Output: [3, 4, 5]
+
+let arr2 = [1, 2, 3, 4, 5, 6];
+console.log(secondHalf(arr2)); // Output: [4, 5, 6]
+
+function secondHalf(arr) {
+    // Return an array containing the second half of an array
+    // Exclude middle index on odd length arr
+    // Your code here
+}
+function secondHalf(arr) {
+  const length = arr.length;
+  const middleIndex = Math.floor(length / 2);
+
+  if (length % 2 === 0) {
+    return arr.slice(middleIndex);
+  } else {
+    return arr.slice(middleIndex + 1);
+  }
+}
+let arr1 = [1, 2, 3, 4, 5];
+console.log(secondHalf(arr1)); // Output: [4, 5]
+
+let arr2 = [1, 2, 3, 4, 5, 6];
+console.log(secondHalf(arr2)); // Output: [5, 6]
+
+
+module.exports = {
+    oddIndices,
+    oddReverse,
+    secondPower,
+    nthPower,
+    firstHalf,
+    secondHalf
+}
+
+module.exports = {
+  oddIndices: function(arr) {
+    let result = [];
+    for (let i = 1; i < arr.length; i += 2) {
+      result.push(arr[i]);
+    }
+    return result;
+  },
+  oddReverse: function(arr) {
+    let result = [];
+    for (let i = arr.length - 1; i >= 0; i -= 2) {
+      result.push(arr[i]);
+    }
+    return result;
+  },
+  secondPower: function(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (i === Math.pow(2, Math.floor(Math.log(i) / Math.log(2)))){
+        result.push(i);
+      }
+    }
+    return result;
+  },
+  nthPower: function(arr, n) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (i === Math.pow(n, Math.floor(Math.log(i) / Math.log(n)))) {
+        result.push(i);
+      }
+    }
+    return result;
+  },
+  firstHalf: function(arr) {
+    return arr.slice(0, Math.ceil(arr.length / 2));
+  },
+  secondHalf: function(arr) {
+    const middleIndex = Math.floor(arr.length / 2);
+    return arr.slice(arr.length % 2 === 0 ? middleIndex : middleIndex + 1);
+  }
+
